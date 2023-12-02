@@ -1,5 +1,5 @@
 const express = require("express");
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 const path = require('path');
@@ -11,11 +11,11 @@ app.use('/js', express.static(path.join(__dirname, "./js")));
 app.set("view engine", 'hbs');
 
 app.get('/', function (req, res) {
-        const clickLabel = () => {
-            return "Klik";
-        }
+    const clickLabel = () => {
+        return "Klik";
+    };
 
-        res.render('index', {
+    res.render('index', {
         pageTitle: "Start Page",
         subTitle: fromAnotherFile.someTitle,
         clickLabel: clickLabel()
