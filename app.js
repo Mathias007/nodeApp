@@ -1,17 +1,10 @@
-const http = require('http');
+const express = require("express");
 
-const handler = (request, response) => {
- console.log("sample message");
- response.end("Hello World");
-}
-
-const server = http.createServer(handler);
 const port = 3000;
+const app = express();
 
-server.listen(port, (err) => {
-    if (err) {
-        return console.log("coś poszło nie tak...:", err)
-    }
-    
-    console.log("serwer działa na porcie", port)
+app.get('/', function (req, res) {
+ res.send("Hello World");
 });
+
+app.listen(port);
