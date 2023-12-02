@@ -1,9 +1,4 @@
-const sayHello = () => { console.log("Hello World") }
-sayHello(); 
+const functions = require('./functions');
 
-const add = (a,b) => {
-    console.log(a + b)
-}
-
-add(2,3);
-   
+functions.sayHello();
+functions.add(3, 2);
