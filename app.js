@@ -1,19 +1,21 @@
 const express = require("express");
-
 const port = 3000;
 const app = express();
 
+app.set("view engine", 'hbs')
+
 app.get('/', function (req, res) {
- res.send("Hello World");
+    res.render('index');
 });
 
 app.get('/about', function (req, res){
- res.send("My site")
+    res.send("My site");
 });
 
 app.listen(port, (err) => {
  if (err) {
-    return console.log("coś poszło nie tak...:", err)
+    return console.log("coś poszło nie tak...:", err);
  }
- console.log("serwer działa na porcie", port)
+
+ console.log("serwer działa na porcie", port);
 });
