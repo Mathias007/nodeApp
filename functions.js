@@ -6,4 +6,5 @@ module.exports = {
  sayHello,
  add
 }
-console.log("Everything is loaded correctly")
+
+console.log("Everything is loaded correctly");
